@@ -1,0 +1,15 @@
+span.plus.speaker-inputupload input.speaker-inputfile {
+    position: absolute;
+    opacity: 0;
+    height: 50px;
+    width: 100%;
+}
+span.plus.speaker-inputupload {
+    position: absolute;
+    display: inline-block;
+    right: -23px;
+}
+.save-spekerlink {
+    padding: 8px 28px;
+    margin-right: 11px;
+}

@@ -1,0 +1,97 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+
+                <h1 class="speaker-heading">Speaker List
+                    <a *ngIf="isVisible" routerLink="/create-speaker" class="btn pull-right btn-success speaker-addlink">Add Speaker</a>
+            </h1>
+                <!--<div class="grid-srch">
+                    <div class="grid-srch-lt">
+                        <div class="input-group add-on">
+                            <input type="text" id="srch-term" name="srch-term" placeholder="Search" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <div class="col-sm-12">
+
+                    </div>
+
+
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec speaker-list">
+                    <ng-container *ngIf="speakerListCount;else speaker_content">
+                        <div *ngFor="let s_list of speakerData;" class="Upcoming-tab-content Upcoming-tab-content2">
+                            <div class="speaker-listimage">
+                                <div class="img-block img-block3">
+                                    <!--<p>M</p>-->
+                                    <img src="{{s_list.speakerImage}}"/>
+                                </div><!--img-block-->
+                            </div>
+
+                            <div class="speaker-listcontent">
+                                <div class="content-block">
+                                    <div class="content-otr">
+                                        <span class="content-text">
+                                            <h2><b>{{s_list.name}}</b></h2>
+                                            <h2>{{s_list.qualification}}</h2>
+                                        </span>
+
+                                        <div class="social-icons">
+                                            <a *ngIf="s_list.facebook_url" target="_blank"   href="{{ s_list.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            <a *ngIf="s_list.linkedIn_url" target="_blank"  href="{{ s_list.linkedIn_url }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                            <a *ngIf="s_list.wikipedia_url" target="_blank"  href="{{ s_list.wikipedia_url }}"><i class="fa fa-wikipedia-w" aria-hidden="true"></i> </a>
+                                        </div>
+                                    </div>
+                                    <p class="description-content"> {{s_list.description}} </p>
+
+
+                                        <div class="readmore speker-morebutton">
+                                            <a (click)="getSpeakerId(s_list.speaker_id)" class="speaker-more-link">Read More</a>
+                                        </div>
+
+                                </div><!--content-block-->
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-template #speaker_content>
+                        <div class="Completed-tab-content">
+                            <figure>
+                                <img src="assets/images/speaker.png">
+                            </figure>
+                            <figcaption>You Don’t have any speaker.</figcaption>
+                        </div><!--Completed-tab-content-->
+                    </ng-template>
+                </div>
+
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

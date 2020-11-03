@@ -1,0 +1,13 @@
+<div class="col-sm-6">
+    <div class="form-group">
+     <label class="label-text full-wd headingtextcolor chartlabeltext" for="usr">Event Check In</label>
+        <div class="pie-chartbottom">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"></canvas>
+        </div>
+    </div>
+</div>

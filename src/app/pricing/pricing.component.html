@@ -1,0 +1,148 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page inner-page2">
+
+                <h1>Set Price</h1>
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <div class="col-sm-12">
+
+                    </div>
+
+
+                </div>
+                <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+                    <form [formGroup]="conferencePricingForm">
+
+                        <div class="row margin-top">
+
+                            <div class="col-sm-4">
+
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Select booking start date</label>
+                                    <angular2-date-picker [(ngModel)]="date1" [settings]="settings"
+                                                          formControlName="selectBookingStartDate"></angular2-date-picker>
+                                    <show-errors
+                                        [control]="conferencePricingForm.controls.selectBookingStartDate"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Select Conference Ticket Type</label>
+                                    <select [(ngModel)]="ticketType" name="ticketType"
+                                            [(ngModel)]="conferenceTicketType"
+                                            formControlName="fullConferenceTicketType" class="form-control input-box">
+                                        <option value="1">Free</option>
+                                        <option value="2">Paid</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4" *ngIf="ticketType==2">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Full Conference Price</label>
+                                    <input type="text" class="form-control input-box" [(ngModel)]="conferencePrice"
+                                           formControlName="fullConferencePrice">
+
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4" *ngIf="ticketType==2">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Select Currency</label>
+                                    <select class="form-control input-box" [(ngModel)]="conferenceCurrency"
+                                            formControlName="fullConferenceCurrency">
+                                        <option value="€">€</option>
+                                        <option value="$">$</option>
+                                        <option value="¥">¥</option>
+                                        <option value="£">£</option>
+                                        <option value="₹">₹</option>
+                                        <option value="؋">؋</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="pull-left session editbtn">
+                                    <a href="javascript:;" (click)=setEventPrice()>Done</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="col-sm-12 pricing-settable margin-top" *ngIf="ticketType==2">
+                        <div class="table-heading">
+                            <h4>Sessions</h4>
+                        </div>
+                        <table class="table set-table">
+
+
+
+                            <tbody>
+                            <ng-container *ngIf="eventSessions; else emptyMsg">
+                                <tr *ngFor="let eventSession of eventSessions">
+                                    <td>
+                                        <b>{{eventSession.title}}</b>
+                                    </td>
+                                    <td>
+                                        <input type="text" [(ngModel)]="eventSession.ticket_price"
+                                               class="form-control input-box">
+                                    </td>
+                                    <td>
+                                        <div class="pull-left session session-guest">
+                                            <a href="javascript:;" (click)=setSessionPrice(eventSession) data-toggle="modal"
+                                               data-target="#myModal">Set Price</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                            <ng-template #emptyMsg>
+                                <td colspan="3">
+                                    <div class="emptyMessage">
+                                        No sessions are available. Please add sessions in sessions section.
+                                    </div>
+                                </td>
+                            </ng-template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+
+
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

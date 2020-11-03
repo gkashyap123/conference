@@ -1,0 +1,23 @@
+.page-content.conference-innerpage2 {
+    padding: 68px 0px !important;
+}
+.conference-edit2date .col-md-6 {
+    padding: 0px 15px;
+    width: 50%;
+}
+.conference-edit2date .col-md-6 .test {
+    width: 100%;
+}
+.conference-edit2date .col-md-6 .test:nth-child(1){
+    padding:0px 15px 0px 0px;
+}
+.conference-innerpage2 .hold {
+    padding: 0;
+}
+.conference-innerpage2 .hold input.form-control {
+    margin-bottom: 8px;
+}
+.conference-innerpage2 span.required {
+    width: auto;
+    float: right;
+}

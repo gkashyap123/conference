@@ -1,0 +1,34 @@
+<div class="page-header navbar navbar-fixed-top">
+  <!-- BEGIN HEADER INNER -->
+  <div class="page-header-inner">
+    <!-- BEGIN LOGO -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <div class="page-logo">
+          <a href = "javascript:void(0)" routerLink="/my-conference">
+            <img src="assets/images/logo.png" alt="logo" class="logo-default"/>
+          </a>
+          <div class="menu-toggler sidebar-toggler hide"></div>
+        </div><!--page-logo-->
+      </div>
+
+      <div class="col-xs-12 col-sm-8 col-md-8 col-right">
+        <a href="javascript:;" class="menu-toggler hd-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse"> <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+        <div class="header-right">
+          <div class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#" id="menu1" style = "text-align: right;"><i class="fa fa-user"
+                                                                                     aria-hidden="true"></i>
+              {{currentUserName}} <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation"><a role="menuitem" routerLink="/login">Logout</a></li>
+            </ul>
+          </div>
+        </div><!--header-rights-->
+        <!-- END TOP NAVIGATION MENU -->
+      </div>
+    </div>
+  </div>
+  <!-- END LOGO -->
+</div>

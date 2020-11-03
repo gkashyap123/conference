@@ -1,0 +1,20 @@
+.conference-editform span.required {
+    width: auto;
+    float: right;
+}
+.date-conferenceedit .form-group2 {
+    width: 50%;
+    padding: 0px 15px;
+}
+.date-conferenceedit .test {
+    width: 100%;
+}
+.upload-conferenceedit input.form-control {
+    margin-bottom: 8px;
+}
+.upload-conferenceedit .hold {
+    padding: 0;
+}
+input.conference-editbutton {
+    padding: 8px 28px;
+}

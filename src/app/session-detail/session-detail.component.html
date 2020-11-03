@@ -1,0 +1,108 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+                <h1>Session Details</h1>
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <div class="col-sm-12">
+                        <!-- <div class="pull-right Add-Event">
+						  <a href="javascript:;" class="btn">Add Event</a>
+						</div> -->
+                    </div>
+
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+                    <div class="row ">
+                        <div class="col-sm-12">
+                            <div class="content-block spkr-detail">
+                                <div class="content-otr ">
+                                    <div class="row mr-5">
+                                        <div class="col-sm-12">
+                                            <h2><b>{{ sessionDetail.title }}</b></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row mr-5">
+                                        <div class="col-sm-4">
+                                            <h5><span class="spkr-date"> <b>From :</b> <span class=""><i
+                                                class="fa fa-calendar"></i></span> {{ sessionStartDate }}
+                  <span></span><span class="spkr-time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{sessionStartTime}}</span></span>
+                                            </h5>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5><span class="spkr-date"> <b>To :</b> <span class=""><i
+                                                class="fa fa-calendar"></i></span>  {{ sessionEndDate }}
+                  <span></span><span class="spkr-time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{sessionEndTime}}</span></span>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-sm-4">
+                                            <h5><span class="clr-blck"  >Ticket Type: <b> {{ sessionTicketType }} </b> </span></h5>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5><span class="clr-blck">No. of Ticket : <b>{{ sessionDetail.total_tickets }} </b> </span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ sessionDetail.description }}</p>
+                            </div><!--content-block-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="details-outer">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="detail-inner br-rt">
+                                            <p><span class="left-side"><img src="assets/images/map-maker.png"></span>
+                                            </p>
+                                            <span class="right-side">  {{ sessionDetail.address }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="detail-inner ">
+                                            <p><span class="left-side"><img src="assets/images/person.png"></span><span
+                                                class="right-side">{{sessionSpeakers}}</span></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin-top">
+
+                    </div>
+
+                    <div class="row margin-top">
+                        <div class="col-sm-12">
+                                <input type="button" *ngIf="isVisible"   routerLink="/edit-session/{{sessionDetail.session_id}}" value="Edit" class="session-detailsedit btn btn-success">
+                                <input type="button" *ngIf="isVisible"  (click)="deleteSession(sessionDetail.session_id)" value="Delete" class="session-detailsedit btn btn-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- inner page -->
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

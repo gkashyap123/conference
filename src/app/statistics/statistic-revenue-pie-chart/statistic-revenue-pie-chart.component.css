@@ -1,0 +1,16 @@
+.inner-page h1, .grid-srch{
+    width: 100%!important;
+}
+/** 25 oct **/
+.Revenue-pie {
+    float: left;
+    width: 100%;
+    padding: 20px 0;
+}
+.Revenue-pie label.label-text {
+    padding: 6px 5px;
+    display: block;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 14px;
+}

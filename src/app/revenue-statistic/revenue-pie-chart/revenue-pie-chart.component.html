@@ -1,0 +1,17 @@
+<div class="col-sm-6">
+    <div class="form-group">
+        <label class="label-text full-wd headingtextcolor chartlabeltext" for="usr">Revenue Details </label>
+       <div class="pie-chartbottom">
+           <canvas
+               baseChart
+               [chartType]="'pie'"
+               [datasets]="pieChartData"
+               [labels]="pieChartLabels"
+               [options]="pieChartOptions"
+               [legend]="true"
+               [colors]="pieChartColor"
+               (chartClick)="onChartClick($event)">
+           </canvas>
+       </div>
+    </div>
+</div>

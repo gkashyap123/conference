@@ -1,0 +1,15 @@
+<div class="col-sm-6">
+    <div class="form-group">
+        <label class="label-text full-wd headingtextcolor chartlabeltext" for="usr">Ticket Buying Details </label>
+        <canvas
+            baseChart
+            [chartType]="'bar'"
+            [datasets]="pieChartData"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [legend]="true"
+            [colors]="pieChartColor"
+            (chartClick)="onChartClick($event)">
+        </canvas>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+
+                <h1>Conference Preiew</h1>
+                <!--<div class="grid-srch">
+                    <div class="grid-srch-lt">
+                        <div class="input-group add-on">
+                            <input type="text" id="srch-term" name="srch-term" placeholder="Search" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew">
+                    <div class="col-sm-4 col-md-3">
+                        <div class="img-block">
+                            <slideshow #slideshow
+                                       [imageUrls]="imageUrls"
+                                       [height]="height"
+                                       [minHeight]="minHeight"
+                                       [arrowSize]="arrowSize"
+                                       [showArrows]="showArrows"
+                                       [disableSwiping]="disableSwiping"
+                                       [autoPlay]="autoPlay"
+                                       [stopAutoPlayOnSlide]="stopAutoPlayOnSlide"
+                                       [debug]="debug"
+                                       [backgroundSize]="backgroundSize"
+                                       [backgroundPosition]="backgroundPosition"
+                                       [backgroundRepeat]="backgroundRepeat"
+                                       [showDots]="showDots"
+                                       [dotColor]="dotColor"
+                                       [showCaptions]="showCaptions"
+                                       [captionColor]="captionColor"
+                                       [captionBackground]="captionBackground"
+                                       [lazyLoad]="lazyLoad"
+                                       [hideOnNoSlides]="hideOnNoSlides">
+                            </slideshow>
+                            <!--<img src="{{eventImage}}" alt="image">-->
+                        </div><!--img-block-->
+                    </div>
+
+                    <div class="col-sm-8 col-md-9">
+                        <div class="content-block">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-user"></i> {{ this.first_name }}</h3>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-calendar"></i> Conference Starts</h3>
+                                        <p>{{ this.start_date_time }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-calendar"></i> Conference Ends</h3>
+                                        <p>{{ this.end_date_time }} </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-map-marker"></i> {{this.location_name}}</h3>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-tag"></i> Conference Type</h3>
+                                        <p>{{this.eventType}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="cp-content">
+                                        <h3><i class="fa fa-tag"></i> Conference Category</h3>
+                                        <p>{{this.eventCategory}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--content-block-->
+                    </div>
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

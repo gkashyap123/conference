@@ -1,0 +1,29 @@
+<div class="col-sm-6">
+    <div class="form-group">
+        <label class="label-text full-wd headingtextcolor chartlabeltext" for="usr">Revenue Generated</label>
+        <div class="Revenue-pie">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="label-text">select session</label>
+                </div>
+                <div class="col-sm-8">
+                    <select class="fm-txt form-control"  #autofocusDisciplineType data-type="select" placeholder="Claim Type" name="departmentKey"
+                            id="departmentKey" class="fm-txt form-control tFootInput inputSearch" (change)="get_session_ticket($event.target.value)">
+                        <option *ngFor="let session of sessionlist" [value]="session.session_id">{{session.title}}</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <canvas
+            baseChart
+            [chartType]="'pie'"
+            [datasets]="pieChartData"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [legend]="true"
+            [colors]="pieChartColor"
+            >
+        </canvas>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+.logo {
+  margin: 100px 0 0;
+  text-align: center;
+}
+.signUp_Form {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.signUp_Form h4 {
+  font-size: 21px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #68a437;
+  margin: 0 0 24px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 0;
+  border-bottom: 1px solid #68a437;
+  font-weight: 600;
+}
+.signUp_Form form {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 36px 0 rgba(0, 0, 0, 0.24);
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.signUp_Form form input.form-control {
+  border-radius: 6px;
+  background-color: #0c1f3b;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  border-radius: 0;
+  height: 40px;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  color: #333;
+  width: 94%;
+  box-shadow: 0 0 0 0;
+}
+.signUp_Form form label {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+}
+.btn-default {
+  color: #fff;
+  background-color: #68a437;
+  border-color: #68a437;
+  width: 100%;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+.btn-default:hover, .btn-default:focus{
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+  transition-duration: .3s;
+  -webkit-transition-duration: .3s;
+  -moz-transition-duration: .3s;
+}
+
+.supportContact p a {
+  font-weight: bold;
+  line-height: 1.12;
+  letter-spacing: normal;
+  color: #68a437;
+}
+.supportContact {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+.form-group input.form-control{
+    border:1px solid grey!important;
+    margin-bottom: 0px!important;
+}
+.invalid-feedback {
+    color:red;
+}

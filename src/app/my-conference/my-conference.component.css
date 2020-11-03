@@ -1,0 +1,30 @@
+.page-content-wrapper .page-content{top:70px;
+    position: relative;padding-left:20px !important;}
+.page-content-wrapper .my-conference-page {
+    top: 0 !important;
+}
+.readmore-myconference:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.inner-page h1, .grid-srch{
+    width: 100%;
+}
+
+.event-detailspublish {
+    margin: 0 20px;
+}
+.img-block img{
+    max-height: 220px;
+}
+.Conference-Tabs .tab-content > .tab-pane {
+    padding: 20px;
+    background: #ebebeb;
+    min-height: 100%;
+    float: left;
+}
+
+.img-block {
+    text-align: center;
+}

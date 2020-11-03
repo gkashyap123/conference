@@ -1,0 +1,167 @@
+<app-header></app-header>
+<div class="wrapper">
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page" style="min-height:532px">
+
+                <h1>Add Session</h1>
+                <!--<div class="grid-srch">-->
+                    <!--<div class="grid-srch-lt">-->
+                        <!--<div class="input-group add-on">-->
+                            <!--&lt;!&ndash;<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="input-group-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <!--<div class="col-sm-12">
+                       <div class="pull-right Add-Event">
+                       <a href="javascript:;" class="btn">Add Event</a>
+                       </div>
+                    </div>-->
+
+
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+
+                    <form [formGroup]="creteSessionForm">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="label-text" for="usr">Give Your Session a Title</label>
+                                    <input type="text " name="title" class="form-control input-box"
+                                           formControlName="title">
+                                    <show-errors [control]="creteSessionForm.controls.title"></show-errors>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="label-text" for="usr">Description</label>
+                                    <textarea name="description" maxlength="1000" class="form-control input-box textarea-box"
+                                              formControlName="description"></textarea>
+                                    <show-errors [control]="creteSessionForm.controls.description"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="label-text" for="usr">Address</label>
+                                    <input type="text" name="address" class="form-control input-box" formControlName="address">
+                                           <!--formControlName="address">-->
+                                    <!--<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>-->
+                                    <show-errors [control]="creteSessionForm.controls.address"></show-errors>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text"> Ticket Type</label>
+                                    <select  name="ticketType"  formControlName="ticket_type" class="form-control input-box">
+                                        <option value="1">Free</option>
+                                        <option value="2">Paid</option>
+                                    </select>
+                                    <show-errors [control]="creteSessionForm.controls.ticket_type"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="label-text" for="usr">Total Tickets </label>
+                                    <input type="text" name="address" class="form-control input-box" formControlName="total_tickets">
+                                    <show-errors [control]="creteSessionForm.controls.total_tickets"></show-errors>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="usr" class="label-text">From
+                                    <span class="required">*</span>
+                                </label>
+                                <angular2-date-picker (onDateSelect)="onFromDateSelect($event)" [(ngModel)]="date" [settings]="settings"
+                                                      formControlName="from"></angular2-date-picker>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="usr" class="label-text">To
+                                    <span class="required">*</span>
+                                </label>
+                                <angular2-date-picker (onDateSelect)="onToDateSelect($event)" [(ngModel)]="date1" [settings]="settings"
+                                                      formControlName="to"></angular2-date-picker>
+                            </div>
+
+                        </div>
+                        <div class="row margin-top">
+                        <div class="col-sm-6">
+                            <label class="label-text" for="usr">Speakers</label>
+                            <div class="checkbox-otr">
+                                <ng-container *ngIf="speakerListCount; else create_session">
+                                    <div class="checkbox" *ngFor="let speaker of speakerlist">
+                                        <label>
+                                            <input name="speaker" (change)="updateSelectedSpeakers($event)"
+                                                   [value]="speaker._id" type="checkbox">
+                                            {{ speaker.name }}
+                                        </label>
+                                    </div>
+                                </ng-container>
+                                <ng-template #create_session>
+                                    <div class="checkbox">
+                                        <label>
+                                           No Record Found
+                                        </label>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+
+                                    <input type="button" id="postSessionData" (click)="postSessionData()" value="Save" class="btn btn-success saveconferecesessionlink">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <!-- inner page -->
+
+        </div>        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

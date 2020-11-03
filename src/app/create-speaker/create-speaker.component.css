@@ -1,0 +1,22 @@
+.speaker-formcaptcha .test input.form-control {
+    width: 79%;
+}
+.form-group2.speaker-formcaptcha {
+    position: relative;
+    float: left;
+}
+.form-group2.speaker-formcaptcha .test span.font-some {
+    top: 9px;
+    position: absolute;
+    right: 27px;
+}
+.form-group2.speaker-formcaptcha .test {
+    width: 100%;
+}
+.event-sec span.required {
+    width: auto;
+    float: right;
+}
+.btn-submitconference {
+    padding: 8px 28px;
+}

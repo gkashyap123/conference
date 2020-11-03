@@ -1,0 +1,31 @@
+p.description-content {
+    word-break: break-word;
+    white-space: normal;
+    text-align: justify;
+
+}
+a.speaker-more-link {
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.Upcoming-tab-content:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+h1.speaker-heading {
+    width: 100%;
+}
+.speaker-listcontent {
+    width: 89%;
+    float: right;
+}
+.speaker-listimage {
+    width: auto;
+    float: left;
+}
+.speaker-listimage img {
+    width: 113px;
+    height: 113px;
+}

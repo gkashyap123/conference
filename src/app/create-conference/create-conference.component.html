@@ -1,0 +1,193 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+
+
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+
+            <div class="page-content inner-page inner-page2 conference-innerpage2">
+
+                <h1>Create Event</h1>
+                <!--<div class="grid-srch">-->
+                    <!--<div class="grid-srch-lt">-->
+                        <!--<div class="input-group add-on">-->
+                            <!--&lt;!&ndash;<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="input-group-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="event-sec">
+                    <form [formGroup]="creteConfrenceForm">
+                        <div class="form-row row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text"> Give your conference a title
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <input maxlength="100" type="text " class="form-control input-box" formControlName="conferenceAtitle">
+                                    <show-errors [control]="creteConfrenceForm.controls.conferenceAtitle"></show-errors>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="upload-box">
+                                    <div class="hold">
+
+                                        <label for="usr" class="label-text">
+                                            Upload Image
+                                             <!--<span class="required">*</span>-->
+                                         </label>
+                                        <input class="form-control input-box"  type="file" formControlName="conferenceFile1" (change)="captureFile1($event)">
+                                        <show-errors [control]="creteConfrenceForm.controls.conferenceFile1"></show-errors>
+                                        <input class="form-control input-box"  type="file" formControlName="conferenceFile2" (change)="captureFile2($event)">
+                                        <input class="form-control input-box"  type="file" formControlName="conferenceFile3" (change)="captureFile3($event)">
+                                        <input class="form-control input-box"  type="file" formControlName="conferenceFile4" (change)="captureFile4($event)">
+                                        <input class="form-control input-box"  type="file" formControlName="conferenceFile5" (change)="captureFile5($event)">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Describe your conference
+                                        <span class="required">*</span>
+                                    </label>
+                                    <textarea  maxlength="1000" class="form-control input-box textarea-box" formControlName="describeYourConference"></textarea>
+                                    <show-errors [control]="creteConfrenceForm.controls.describeYourConference"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Conference Type
+                                        <span class="required">*</span>
+                                    </label>
+                                    <select class="fm-txt form-control" #autofocusDisciplineType data-type="select" placeholder="Claim Type" name="departmentKey"
+                                        id="departmentKey" class="fm-txt form-control tFootInput inputSearch" formControlName="conferenceType">
+                                        <option disabled>Select</option>
+                                        <option *ngFor="let type of types" [value]="type.event_type">{{type.event_type}}</option>
+                                    </select>
+                                    <show-errors [control]="creteConfrenceForm.controls.conferenceType"></show-errors>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Conference Category
+                                        <span class="required">*</span>
+                                    </label>
+                                    <select class="fm-txt form-control" #autofocusDisciplineType data-type="select" placeholder="Claim Type" name="departmentKey"
+                                        id="departmentKey" class="fm-txt form-control tFootInput inputSearch" formControlName="conferenceCategory">
+                                        <option disabled>Select</option>
+
+                                        <option *ngFor="let category of categories" [value]="category.event_category">{{category.event_category}}</option>
+                                    </select>
+                                    <show-errors [control]="creteConfrenceForm.controls.conferenceCategory"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Venue
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text " class="form-control input-box" formControlName="venue">
+                                    <show-errors [control]="creteConfrenceForm.controls.venue"></show-errors>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-md-6  col-xs-12 form-group">
+                                <label class="label-text">Conference Type</label>
+                                <br>
+                                <div class="form-check-inline">
+
+                                    <label class="customradio">
+                                        <span class="radiotextsty">Free</span>
+                                        <input type="radio" checked="checked" [value]="1" name="ticketType" formControlName="ticketType">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="customradio">
+                                        <span class="radiotextsty">Paid</span>
+                                        <input type="radio" name="ticketType" [value]="2" formControlName="ticketType">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <show-errors [control]="creteConfrenceForm.controls.ticketType"></show-errors>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="label-text">Set the date of your conference</label>
+                            </div>
+                            <div class="col-md-12 margin-top conference-edit2date">
+                                <div class="form-group2 col-md-6">
+                                    <div class="form-group">
+
+                                        <div class="test">
+                                            <label for="usr" class="label-text">From
+                                                <span class="required">*</span>
+                                            </label>
+                                            <angular2-date-picker (onDateSelect)="onFromDateSelect($event)" [(ngModel)]="date1" [settings]="settings" formControlName="from" [settings]="settings"></angular2-date-picker>
+                                            <show-errors [control]="creteConfrenceForm.controls.from"></show-errors>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group2 col-md-6">
+                                    <div class="form-group">
+
+                                        <div class="test">
+                                            <label for="usr" class="label-text">To
+                                                <span class="required">*</span>
+                                            </label>
+                                            <angular2-date-picker (onDateSelect)="onToDateSelect($event)" [(ngModel)]="date2" [settings]="settings" formControlName="to" [settings]="settings"></angular2-date-picker>
+                                            <show-errors [control]="creteConfrenceForm.controls.to"></show-errors>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+
+
+                                    <input type="button" id="add_confrenceEvent" (click)="add_confrenceEvent()" type="submit" class="btn btn-success conference-eventedit" value="Done">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

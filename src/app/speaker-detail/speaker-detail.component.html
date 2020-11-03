@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+                <h1 class="speaker-heading">Speaker Details <a *ngIf="currentEventType === EventType" routerLink="/create-speaker" class="btn btn-success pull-right">Add Speaker</a></h1>
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+                    <div class="row margin-top">
+                        <div class="col-sm-12">
+                            <div class="speaker-listimage">
+                                <div class="form-group">
+                                    <div class="edit-img ">
+                                        <img style="width:100px;height:100px;" src={{speakerData.speakerImage}} alt="images" title="images"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="speaker-listcontent spkr-page margin-top ">
+                                <div class="content-block spkr-detail">
+                                    <div class="content-otr ">
+                                        <h2><b>{{speakerData.name}}</b></h2>
+                                        <h5><span class="img-icon"><img src="assets/images/email.png"></span>
+                                            {{speakerData.email}}</h5>
+                                        <h4> Qualification :{{speakerData.qualification}} <b></b></h4>
+                                    </div>
+                                    <p>{{speakerData.description}}</p>
+                                </div><!--content-block-->
+                            </div>
+                            <div class="social-icons spkr-page">
+                                <a *ngIf="speakerData.facebook_url" target="_blank" href="{{ speakerData.facebook_url }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a *ngIf="speakerData.linkedIn_url" target="_blank" href="{{ speakerData.linkedIn_url }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a *ngIf="speakerData.wikipedia_url" target="_blank" class="bg-black" href="{{ speakerData.wikipedia_url }}"><i class="fa fa-wikipedia-w"  aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin-top">
+                        <div class="col-sm-12">
+                                <input *ngIf="currentEventType === EventType" type="button" routerLink="/edit-speaker/{{speakerData.speaker_id}}"  value="Edit" class="btn btn-success speaker-detialedit">
+                                <input *ngIf="currentEventType === EventType" type="button" (click)="delete_speaker(speakerData.event_id,speakerData.speaker_id)" value="Delete" class="btn btn-success speaker-detialedit">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

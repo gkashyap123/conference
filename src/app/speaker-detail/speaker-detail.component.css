@@ -1,0 +1,22 @@
+.inner-page h1.speaker-heading {
+    width: 100%;
+}
+.speaker-listimage {
+    width: auto;
+    float: left;
+}
+.speaker-listcontent{
+    width: 89%;
+    float: right;
+}
+.speaker-listimage img {
+    width: 113px;
+    height: 113px;
+}
+input.speaker-detialedit {
+    padding: 8px 28px;
+    margin-right: 11px;
+}
+.social-icons {
+    width: 100%!important;
+}

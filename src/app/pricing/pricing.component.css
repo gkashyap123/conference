@@ -1,0 +1,22 @@
+.col-sm-12.pricing-settable {
+    padding: 0;
+}
+.session-guest a {
+    background-color: #000;
+    padding: 8px 28px;
+    display: inline-block;
+    height: auto;
+    border-radius: 4px;
+}
+.session.session-guest {
+    background: none;
+    height: auto;
+    line-height: normal;
+}
+
+div.emptyMessage {
+    border: 1px solid black;
+    border-radius: 0px;
+    width: 100%;
+    padding: 10px;
+}

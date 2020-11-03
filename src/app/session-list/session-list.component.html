@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<div class="wrapper">
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+
+                <h1>Session List</h1>
+                <div class="grid-srch">
+                    <div class="grid-srch-lt">
+                        <div class="input-group add-on">
+                            <!--<input type="text" id="srch-term" name="srch-term" placeholder="Search" class="form-control">-->
+                            <div class="input-group-btn">
+                                <button routerLink="/create-session"  *ngIf="isVisible"  class="btn btn-success pull-right"> Add Session </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <!--<div class="col-sm-12">
+					   <div class="pull-right Add-Event">
+					   <a href="javascript:;" class="btn">Add Event</a>
+					   </div>
+					</div>-->
+
+
+                </div>  <!--Upcoming-tab-content-->
+
+                <!-- Conference-Preiew -->
+                <ng-container *ngIf="sessionlist; else session_content">
+                    <div *ngFor="let data of sessionlist;" class="event-sec">
+                    <div class="Upcoming-tab-content Upcoming-tab-content2 sessionlist-tabcontent">
+
+                        <div class="sessionlistcontent">
+                            <div class="content-block content-block2 ">
+                                <h2 ><b>Title:</b>{{ data.title }}</h2>
+                                <h2><b>Description:</b>{{ data.description }}</h2>
+                                <div class="col-sm-12">
+                                    <div class="readmore">
+                                        <a routerLink="/session-detail/{{data.session_id}}" class="">Read More</a>
+                                    </div>
+                                </div>
+                            </div><!--content-block-->
+                        </div>
+                    </div>
+                </div>
+                </ng-container>
+                <ng-template #session_content>
+                    <div class="Completed-tab-content">
+                        <figure>
+                            <img src="assets/images/session.png">
+                        </figure>
+                        <figcaption>You Don’t have any session.</figcaption>
+                    </div><!--Completed-tab-content-->
+                </ng-template>
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+
+
+                <h1 class="guestheading">Guest Screen <a *ngIf="isVisible" routerLink="/create-guest" class="btn btn-success pull-right">Add Guest</a></h1>
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+
+                    <div class="col-sm-12">
+                        <div class="pull-right Add-Event">
+
+                        </div>
+                    </div>
+                 </div>
+
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+
+
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec Upcoming-tab-content2">
+
+                    <ng-container *ngIf="guestListCount;else guest_content">
+                        <div *ngFor="let guest of guests" class="Upcoming-tab-content">
+                            <div class="">
+                                <div class="img-block">
+                                    <img [src]="guest.userImage" alt="image">
+                                </div><!--img-block-->
+                            </div>
+
+                            <div class="col-sm-8 col-md-9">
+                                <div class="content-block">
+                                    <h2 >{{guest.name}}</h2>
+                                    <p>{{guest.email}}</p>
+                                </div><!--content-block-->
+                                <div class="readmore speker-morebutton" style="width: 18%;">
+                                    <a  class="speaker-more-link" style="margin-right:-120px;" routerLink="/guest-detail/{{guest.guest_id}}">Read More</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </ng-container>
+                    <ng-template #guest_content>
+                        <div class="Completed-tab-content">
+                            <figure>
+                                <img src="assets/images/guest.png">
+                            </figure>
+                            <figcaption>You Don’t have any guest.</figcaption>
+                        </div><!--Completed-tab-content-->
+                    </ng-template>
+                </div>
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>
+

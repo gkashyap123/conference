@@ -1,0 +1,155 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content inner-page">
+
+                <h1>Edit Session</h1>
+                <div class="grid-srch">
+                    <div class="grid-srch-lt">
+                        <div class="input-group add-on">
+                            <!--<input type="text" id="srch-term" name="srch-term" placeholder="Search" class="form-control">-->
+                            <!--<div class="input-group-btn">-->
+                            <!--<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conference-Preiew -->
+
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <!--<div class="col-sm-12">
+					   <div class="pull-right Add-Event">
+					   <a href="javascript:;" class="btn">Add Event</a>
+					   </div>
+					</div>-->
+
+
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+                    <form [formGroup]="sessionEditDetail">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Give Your Session a Title</label>
+                                    <input class="form-control input-box"
+                                           formControlName="title">
+                                    <show-errors [control]="sessionEditDetail.controls.title"></show-errors>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Description</label>
+                                    <textarea maxlength="1000" class="form-control input-box textarea-box" formControlName="description"> </textarea>
+                                    <show-errors [control]="sessionEditDetail.controls.description"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text">Address</label>
+                                    <input  class="form-control input-box"
+                                           type="text" formControlName="address">
+                                    <show-errors [control]="sessionEditDetail.controls.address"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row margin-top">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="usr" class="label-text"> Ticket Type</label>
+                                    <select  name="ticketType"  formControlName="ticket_type" class="form-control input-box">
+                                        <option value="1">Free</option>
+                                        <option value="2">Paid</option>
+                                    </select>
+                                    <show-errors [control]="sessionEditDetail.controls.ticket_type"></show-errors>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="label-text" for="usr">Total Tickets </label>
+                                    <input type="text" name="address" class="form-control input-box" formControlName="total_tickets">
+                                    <show-errors [control]="sessionEditDetail.controls.total_tickets"></show-errors>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="usr" class="label-text">From
+                                    <span class="required">*</span>
+                                </label>
+                                <!--<input value="{{ sessionDetail.start_date_time }}"  class="form-control input-box">-->
+                                <angular2-date-picker [(ngModel)]="date"  (onDateSelect)="onfromDateSelect($event)"    formControlName="from" ></angular2-date-picker>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="usr" class="label-text">To
+                                    <span class="required">*</span>
+                                </label>
+                                <!--<input value="{{ sessionDetail.end_date_time }}" class="form-control input-box">-->
+                                <angular2-date-picker [(ngModel)]="date1"  (onDateSelect)="ontoDateSelect($event)" formControlName="to"></angular2-date-picker>
+                            </div>
+                        </div>
+
+
+                        <div class="row margin-top">
+                            <div class="col-sm-6">
+                                <label for="usr" class="label-text">Speakers</label>
+                                <div class="checkbox-otr">
+                                    <ng-container *ngIf="speakerCount; else speaker_count">
+                                        <div class="checkbox" *ngFor="let speaker of speakerlist">
+                                            <label><input (change)="updateSelectedSpeakers($event)"
+                                                          [checked]="speaker.checked" [value]="speaker._id" type="checkbox">
+                                                {{ speaker.name }} </label>
+                                        </div>
+                                    </ng-container>
+                                    <ng-template #speaker_count>
+                                        <div class="checkbox">
+                                            <label>No records available.</label>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row margin-top">
+                            <div class="col-sm-12">
+
+                                    <input type="button" id="saveSession"
+                                           (click)="saveSession(sessionDetail.session_id)" value="Save" class="btn btn-success conference-sessionsave">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>

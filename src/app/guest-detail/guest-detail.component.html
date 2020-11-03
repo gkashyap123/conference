@@ -1,0 +1,75 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- END HEADER -->
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <app-sidebar></app-sidebar>
+        <!-- END SIDEBAR -->
+
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper ">
+            <div class="page-content inner-page">
+
+                <h1>Guest Details</h1>
+                <!-- Conference-Preiew -->
+                <div class="Upcoming-tab-content Conference-Preiew Conference-Preiew2">
+                    <div class="col-sm-12">
+                        <!-- <div class="pull-right Add-Event">
+                          <a href="javascript:;" class="btn">Add Event</a>
+                        </div> -->
+                    </div>
+                </div>  <!--Upcoming-tab-content-->
+                <!-- Conference-Preiew -->
+                <div class="event-sec">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <div class="edit-img ">
+                                        <img [src]="guestDetail.userImage" alt="images" title="images">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-9 spkr-page margin-top ">
+
+                                <div class="content-block spkr-detail">
+                                    <div class="content-otr ">
+                                        <h2><b>{{guestDetail.name}}</b></h2>
+                                        <h5><span class="img-icon"><img src="assets/images/email.png"></span>{{guestDetail.email}}</h5>
+                                        <h5><span class="img-icon"><img src="assets/images/phone.png"></span>{{guestDetail.mobile}}</h5>
+                                        <h4> Event Type : <b> Business</b></h4>
+                                        <h4> Sessions :<b> {{guestSessions}}</b></h4>
+                                    </div>
+                                </div><!--content-block-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top">
+                        <div class="col-sm-12">
+                                <input type="button" value="Edit" *ngIf="isVisible" routerLink="/edit-guest/{{guestId}}" class="btn btn-success editguesslink">
+                                <input type="button" value="Delete" *ngIf="isVisible" (click) = removeGuest(guestId) class="btn btn-success editguesslink">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- inner page -->
+
+        </div>
+        <!-- END CONTENT -->
+
+
+    </div>
+    <!-- END CONTAINER -->
+    <app-footer></app-footer>
+    <!-- FOOTER -->
+</div>
+

@@ -1,0 +1,102 @@
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <div class="sidebar-toggler-wrapper">
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            <div class="sidebar-toggler text-left">
+                <h3 routerLink="/conference-preview"> {{ this.first_name }}</h3>
+            </div>
+            <!-- END SIDEBAR TOGGLER BUTTON -->
+        </div>
+        <div class="navogation_tabs">
+            <!-- Nav tabs -->
+            <div class="nav nav-tabs" role="tablist">
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="product">
+                    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li routerLink="/edit-conference" routerLinkActive="active" class="start">
+                            <a>
+                                <i class="fa fa-bell"></i>
+                                <span class="title">Edit Conference</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li routerLink="/session-list" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                            <a style = "display: none;" [routerLink]="['/create-session']"></a>
+                            <a style = "display: none;" [routerLink]="['/edit-session', sessionId]"></a>
+                            <a style = "display: none;" [routerLink]="['/session-detail', sessionId]"></a>
+                            <a href="javascript:;">
+                                <i class="fa fa-list"></i>
+                                <span class="title">Sessions</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+                        <li routerLink="/speaker-list" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                            <a style = "display: none;" [routerLink]="['/create-speaker']"></a>
+                            <a style = "display: none;" [routerLink]="['/speaker-detail']"></a>
+                            <a style = "display: none;" [routerLink]="['/edit-speaker',speakerId]"></a>
+                            <a href="javascript:;">
+                                <i class="fa fa-list"></i>
+                                <span class="title">Speakers</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+
+                            <!--<li>
+                            <a href="javascript:;">
+                                <i class="fa fa-list "></i>
+                                <span class="title">Vendors</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>-->
+                        <li routerLink="/guest-list" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                            <a style = "display: none;" [routerLink]="['/create-guest']"></a>
+                            <a style = "display: none;" [routerLink]="['/guest-detail',guestId]"></a>
+                            <a style = "display: none;" [routerLink]="['/edit-guest',guestId]"></a>
+                            <a href="javascript:;">
+                                <i class="fa fa-gears"></i>
+                                <span class="title">Guests</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+                        <li routerLink="/pricing" routerLinkActive="active" class="start">
+                            <a href="javascript:;">
+                                <i class="fa fa-gears"></i>
+                                <span class="title">Pricing</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+                        <li routerLink="/statistics" routerLinkActive="active">
+                            <a href="javascript:;">
+                                <i class="fa fa-gears"></i>
+                                <span class="title">Statistics</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+                        <li routerLink="/revenue-statistics" routerLinkActive="active">
+                            <a href="javascript:;">
+                                <i class="fa fa-gears"></i>
+                                <span class="title">Revenue Stats</span>
+                                <span class="arrow "></span>
+                            </a>
+                        </li>
+                        <!--<li>
+                        <a href="javascript:;">
+                            <i class="fa fa-gears"></i>
+                            <span class="title">Heat Maps</span>
+                            <span class="arrow "></span>
+                        </a>
+                    </li>-->
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <!--navogation_tabs-->
+
+        <!-- END SIDEBAR MENU -->
+    </div>
+</div>

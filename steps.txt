@@ -1,0 +1,38 @@
+==> 1. In src/index.html add <base href="/">
+==> 2. Create new file src/app/app-routing.module.ts
+==> 3. Import AppRoutingModule in src/app/app.module.ts
+==> 4. Generate the components ng g c department-list -it -is
+==> 5. Confgure the routes for the application, in src/app/app-routing.module.ts
+
+const routes: Routes = [
+  {path: 'departments', component: DepartmentListComponent},
+  {path: 'employees', component: EmployeeListComponent}
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export const routingComponents = [DepartmentListComponent, EmployeeListComponent]
+
+
+
+==> 6. In src/app/app.module.ts
+
+Import routing components
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+
+declarations: [
+    AppComponent,
+    routingComponents
+  ],
+
+
+ ==> 7. In src/app/app.component.html at the HTML
+
+ <nav>
+  <a routerLink="/departments" routerLinkActive="active">Departments</a>
+  <a routerLink="/employees" routerLinkActive="active">Employees</a>
+</nav>
+<router-outlet></router-outlet>

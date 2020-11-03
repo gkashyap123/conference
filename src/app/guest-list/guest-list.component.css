@@ -1,0 +1,9 @@
+h1.guestheading {
+    width: 100%;
+}
+a.speaker-more-link {
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
